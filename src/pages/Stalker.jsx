@@ -62,7 +62,7 @@ export default function Stalker() {
         <section id="timeline" style={{ paddingTop: 60, paddingBottom: 40 }}>
           <div className="netflix-row__title">ASHHAR'S TIMELINE</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16, maxWidth: 600 }}>
-            {TIMELINE_EVENTS.map((ev, i) => (
+            {[...TIMELINE_EVENTS].sort((a, b) => Number(b.year) - Number(a.year)).map((ev, i) => (
               <div key={i} style={{
                 display: 'flex', gap: 20, alignItems: 'flex-start',
                 animation: `fadeUp 0.4s ease both`,

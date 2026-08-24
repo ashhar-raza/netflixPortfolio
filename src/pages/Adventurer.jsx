@@ -62,7 +62,7 @@ export default function Adventurer() {
               borderRadius: 2,
             }} />
 
-            {timeline.map((yearBlock, yi) => (
+            {[...timeline].sort((a, b) => Number(b.year) - Number(a.year)).map((yearBlock, yi) => (
               <div key={yearBlock.year} style={{ display: 'flex', gap: 0, marginBottom: 40 }}>
                 {/* Year label */}
                 <div
