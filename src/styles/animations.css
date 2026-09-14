@@ -153,6 +153,91 @@
   animation: shimmer 1.5s linear infinite;
 }
 
+/* ─── AR INTRO ANIMATION ──────────────────────────────────────────────────── */
+@keyframes ar-entry {
+  0%   { opacity: 0; transform: scale(0.88); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes ar-glow-pulse {
+  0%, 100% { opacity: 0.0; transform: scale(0.9); }
+  50%       { opacity: 0.18; transform: scale(1.05); }
+}
+
+@keyframes ar-tagline-in {
+  0%   { opacity: 0; letter-spacing: 8px; }
+  100% { opacity: 1; letter-spacing: 4px; }
+}
+
+@keyframes ar-overlay-exit {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.ar-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #060606;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  /* Prevent interaction with underlying page during intro */
+  pointer-events: all;
+}
+
+.ar-intro--exit {
+  animation: ar-overlay-exit 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+}
+
+.ar-intro__lettermark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ar-entry 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.ar-intro__glow {
+  position: absolute;
+  inset: -60px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse 70% 70% at 50% 50%,
+    rgba(229, 9, 20, 0.28) 0%,
+    rgba(229, 9, 20, 0.08) 50%,
+    transparent 70%
+  );
+  animation: ar-glow-pulse 2s ease-in-out 0.7s infinite;
+  pointer-events: none;
+}
+
+.ar-intro__letters {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(72px, 16vw, 140px);
+  font-weight: 900;
+  letter-spacing: -4px;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  color: #E50914;
+  filter: drop-shadow(0 0 32px rgba(229, 9, 20, 0.5));
+  user-select: none;
+}
+
+.ar-intro__tagline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(10px, 1.8vw, 13px);
+  color: rgba(163, 163, 163, 0.7);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  animation: ar-tagline-in 0.5s ease 0.7s both;
+  user-select: none;
+}
+
 /* ─── REDUCED MOTION ──────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .anim-fade-in, .anim-fade-up, .anim-fade-down,
@@ -160,4 +245,9 @@
   .marquee-track, .float, .pulse, .blink {
     animation: none !important;
   }
+  /* For reduced motion: make intro appear/disappear without animation */
+  .ar-intro__lettermark { animation: none; }
+  .ar-intro__glow       { animation: none; opacity: 0.1; }
+  .ar-intro__tagline    { animation: none; opacity: 0.7; letter-spacing: 4px; }
+  .ar-intro--exit       { animation: ar-overlay-exit 0.2s ease forwards; }
 }

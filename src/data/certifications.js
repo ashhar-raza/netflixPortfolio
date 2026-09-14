@@ -1,5 +1,21 @@
 export const certifications = [
   {
+    id: "springboot",
+    title: "Backend (Java Spring/Spring Boot) Skill Mastery Certification",
+    issuer: "Scaler",
+    image: "/certificates/springboot.png",
+    description:
+      "Successfully completed Scaler's Backend (Java Spring/Spring Boot) Skill Mastery Certification. Gained hands-on expertise in Java, Spring Framework, Spring Boot, REST API development, backend architecture, dependency injection, database integration, JPA/Hibernate, exception handling, and building scalable backend applications following modern software development best practices.",
+  },
+  {
+    id: "react",
+    title: "Frontend (React) Skill Mastery Certification",
+    issuer: "Scaler",
+    image: "/certificates/react.png",
+    description:
+      "Successfully completed Scaler's Frontend (React) Skill Mastery Certification. Gained hands-on expertise in React, component architecture, hooks, state management, and building modern frontend applications.",
+  },
+  {
     id: "dsa",
     title: "Data Structures & Algorithms",
     issuer: "Scaler · NSDC",
@@ -34,11 +50,5 @@ export const certifications = [
     title: "JavaScript",
     issuer: "Scaler · NSDC",
     image: "/certificates/javascript.png",
-  },
-  {
-    id: "react",
-    title: "ReactJs",
-    issuer: "Scaler · NSDC",
-    image: "/certificates/react.png",
   },
 ];

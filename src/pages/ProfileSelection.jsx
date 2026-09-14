@@ -38,10 +38,10 @@ export default function ProfileSelection() {
   const [returning, setReturning] = useState(null);
   const [hovered, setHovered] = useState(null);
 
-  useEffect(() => {
-    const saved = localStorage.getItem('selectedProfile');
-    if (saved) setReturning(saved);
-  }, []);
+  // useEffect(() => {
+  //   // const saved = localStorage.getItem('selectedProfile');
+  //   // if (saved) setReturning(saved);
+  // }, []);
 
   const handleSelect = (profileId) => {
     localStorage.setItem('selectedProfile', profileId);
@@ -153,7 +153,7 @@ export default function ProfileSelection() {
           fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--muted2)',
           letterSpacing: 1.5,
         }}>
-          {personalInfo.location} · {personalInfo.title}
+          PUNE, INDIA · {personalInfo.title}
         </p>
       </div>
     </div>

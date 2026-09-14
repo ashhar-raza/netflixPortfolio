@@ -3,8 +3,8 @@ export const personalInfo = {
   name: "Ashhar Ahmad Raza",
   shortName: "Ashhar Raza",
   title: "Software Engineer",
-  headline: "Backend Engineer building scalable systems with Java, Spring Boot, Node.js, distributed systems and AI.",
-  location: "Bengaluru, India",
+  headline: "Building Scalable Backend & Full-Stack Systems with Java, Spring Boot, Microservices, Node.js and AI.",
+  location: "Pune, India",
   experience: "3+ Years",
   email: "razaashhar2002@gmail.com",
   phone: "+91-7277862662",
@@ -22,5 +22,5 @@ export const stats = [
   { value: "500+", label: "DSA Problems" },
   { value: "8.0", label: "Engineering CGPA" },
   { value: "0", label: "Backlogs" },
-  { value: "6", label: "Scaler Certifications" },
+  { value: "8", label: "Scaler Certifications" },
 ];

@@ -2,52 +2,43 @@ export const skills = {
   backend: {
     label: "Backend Engineering",
     items: [
-      "Java", "Spring Boot", "Node.js", "Express.js",
-      "FastAPI", "REST APIs", "Microservices", "gRPC",
-      "Spring Security", "JWT / OAuth2",
+      "Java", "Spring", "Spring Boot", "Node.js", "Python",
+      "REST APIs", "Microservices", "Spring Security", "JWT / OAuth2",
     ],
   },
   databases: {
     label: "Data & Storage",
     items: [
+      "SQL", "JPA", "Hibernate",
       "MySQL", "PostgreSQL", "MongoDB", "Redis",
-      "Oracle SQL", "Aerospike",
+      "Oracle SQL",
     ],
   },
-  distributed: {
-    label: "Distributed Systems",
+  messaging: {
+    label: "Messaging & Real-Time",
     items: [
-      "Apache Kafka", "RabbitMQ", "Event-Driven Architecture",
-      "Caching", "Sharding", "Replication",
+      "Kafka", "WebSockets", "RabbitMQ", "Event-Driven Architecture",
     ],
   },
   cloud: {
     label: "Cloud & DevOps",
     items: [
       "AWS", "Docker", "Kubernetes", "NGINX",
-      "CI/CD", "GitHub Actions", "ELK Stack",
+      "CI/CD", "GitHub Actions",
     ],
   },
   frontend: {
     label: "Frontend",
     items: [
-      "React", "React Native", "JavaScript",
-      "TypeScript", "Redux", "Tailwind CSS", "HTML / CSS",
+      "React", "JavaScript", "HTML", "CSS",
+      "TypeScript", "Redux",
     ],
   },
   ai: {
     label: "AI Engineering",
     items: [
-      "LLM APIs", "AI Agents", "Tool Calling",
-      "Prompt Engineering", "Voice AI", "FastAPI",
-      "Deepgram", "Groq", "Pipecat",
-    ],
-  },
-  concurrency: {
-    label: "Concurrency",
-    items: [
-      "Threads", "Executors", "Synchronization",
-      "Optimistic Locking", "Race Conditions",
+      "LLM", "RAG", "AI Systems",
+      "AI Agents", "Tool Calling", "Prompt Engineering",
     ],
   },
   design: {
@@ -84,7 +75,7 @@ export const interviewTopics = [
       { name: "Caching", desc: "Redis for session and data caching. Cache aside, write-through, and eviction strategies." },
       { name: "Kafka", desc: "Topics, partitions, consumer groups, offset management, and event-driven patterns." },
       { name: "Sharding", desc: "Horizontal partitioning of data across nodes to scale writes and storage." },
-      { name: "Microservices", desc: "Service boundaries, API Gateway, service discovery, and inter-service communication with gRPC." },
+      { name: "Microservices", desc: "Service boundaries, API Gateway, service discovery, and inter-service communication." },
       { name: "Load Balancing", desc: "Distributing traffic across service instances. Round-robin, least connections, and health checks." },
       { name: "Rate Limiting", desc: "Token bucket and sliding window algorithms to protect APIs from overload." },
     ],

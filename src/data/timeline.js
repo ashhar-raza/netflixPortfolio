@@ -28,15 +28,15 @@ export const timeline = [
   {
     year: "2023",
     events: [
-      { label: "B.E. Completed", detail: "8.0 CGPA · No backlogs · All 8 semesters cleared", type: "milestone" },
       { label: "Joined PEOL Technologies", detail: "Software Engineer — Bengaluru, India", type: "work" },
+      { label: "B.E. Completed", detail: "8.0 CGPA · No backlogs · All 8 semesters cleared", type: "milestone" },
     ],
   },
   {
     year: "2024",
     events: [
-      { label: "Enterprise Applications", detail: "8+ production apps — backend, APIs, microservices", type: "work" },
       { label: "AI Engineering", detail: "AI Cold Calling Agent — voice pipelines, LLM, tool calling", type: "project" },
+      { label: "Enterprise Applications", detail: "6+ production apps — backend, APIs, microservices", type: "work" },
     ],
   },
   {
@@ -50,10 +50,10 @@ export const timeline = [
   {
     year: "2026",
     events: [
-      { label: "Distributed Systems", detail: "Kafka, microservices, Kafka, sharding, replication", type: "skill" },
-      { label: "Cloud & Infrastructure", detail: "AWS, Docker, Kubernetes, CI/CD", type: "skill" },
-      { label: "AI Agents", detail: "Agentic systems, tool calling, voice AI", type: "skill" },
       { label: "What's Next?", detail: "The next episode is still being written...", type: "next" },
+      { label: "Account Aggregator APIs", detail: "Production-grade AA ecosystem engineering", type: "work" },
+      { label: "Full-Stack Admin Panel", detail: "RBAC, FIP/FIU management, WebSocket APIs", type: "project" },
+      { label: "Joined Finvu", detail: "Software Engineer · Fintech / Account Aggregator · Pune, India", type: "work" },
     ],
   },
 ];

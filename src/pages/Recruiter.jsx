@@ -11,14 +11,15 @@ import { education } from '../data/education';
 import { skills } from '../data/skills';
 import { featuredProjects, moreEpisodes } from '../data/projects';
 
-const CORE_SKILLS = ['Java', 'Spring Boot', 'Microservices', 'Kafka', 'Redis', 'PostgreSQL', 'Docker', 'AWS'];
+const CORE_SKILLS = ['Java', 'Spring Boot', 'Microservices', 'Node.js', 'React', 'Kafka', 'AWS', 'AI/LLM', 'RAG'];
 
 export default function Recruiter() {
   const navigate = useNavigate();
   useEffect(() => { localStorage.setItem('selectedProfile', 'recruiter'); }, []);
 
-  const exp = experience[0];
-  const vtu = education.find((e) => e.id === 'vtu');
+  const finvu = experience[0];  // Current company — always first
+  const peol  = experience[1];  // Previous company
+  const vtu   = education.find((e) => e.id === 'vtu');
 
   return (
     <div id="top" className="page-enter">
@@ -29,7 +30,7 @@ export default function Recruiter() {
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 50% at 30% 60%, rgba(37,99,235,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '40%', background: 'linear-gradient(0deg, #080808 0%, transparent 100%)', pointerEvents: 'none' }} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: 720 }}>
-          <div className="hero__eyebrow anim-fade-up">RECRUITER PROFILE · BENGALURU, INDIA</div>
+          <div className="hero__eyebrow anim-fade-up">SOFTWARE ENGINEER · PUNE, INDIA</div>
           <h1 className="hero__name anim-fade-up anim-delay-1">
             Ashhar<br />
             <span style={{ color: 'var(--muted)', fontWeight: 300 }}>Raza</span>
@@ -38,8 +39,8 @@ export default function Recruiter() {
             Software Engineer · Backend | Java | Spring Boot | Microservices
           </div>
           <p className="hero__desc anim-fade-up anim-delay-3">
-            Building scalable distributed systems with Java, Spring Boot, Node.js, and modern cloud infrastructure.
-            Nearly 3 years shipping production applications across enterprise and EdTech domains.
+            Building scalable backend &amp; full-stack systems with Java, Spring Boot, Node.js, and modern cloud infrastructure.
+            3+ years shipping production applications across fintech and enterprise domains.
           </p>
           <div className="hero__stats anim-fade-up anim-delay-4">
             {stats.slice(0, 4).map((s) => (
@@ -100,28 +101,61 @@ export default function Recruiter() {
         </section>
 
         {/* ── EXPERIENCE ── */}
-        <section style={{ padding: '20px 0 40px' }}>
+        <section id="experience" style={{ padding: '20px 0 40px' }}>
           <div className="netflix-row__title">EXPERIENCE</div>
+
+          {/* Current Role — Finvu */}
           <div className="card" style={{ padding: '24px 28px', marginBottom: 12 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16, marginBottom: 16 }}>
               <div>
                 <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--accent)', letterSpacing: 2, marginBottom: 8 }}>
-                  {exp.start.toUpperCase()} — PRESENT
+                  {finvu.start.toUpperCase()} — PRESENT
                 </div>
-                <h3 style={{ fontSize: 'clamp(18px, 2.5vw, 24px)', fontWeight: 700, color: 'var(--text)', marginBottom: 4 }}>{exp.role}</h3>
-                <p style={{ fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--muted)' }}>{exp.company} · {exp.location}</p>
+                <h3 style={{ fontSize: 'clamp(18px, 2.5vw, 24px)', fontWeight: 700, color: 'var(--text)', marginBottom: 4 }}>{finvu.role}</h3>
+                <p style={{ fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--muted)' }}>
+                  {finvu.company} · {finvu.location}
+                </p>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, alignSelf: 'flex-start' }}>
-                {exp.technologies.slice(0, 6).map((t) => (
+                {finvu.technologies.slice(0, 6).map((t) => (
                   <span key={t} className="skill-chip" style={{ fontSize: 11 }}>{t}</span>
                 ))}
               </div>
             </div>
             <div style={{ height: 1, background: 'var(--border)', margin: '16px 0' }} />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 8 }}>
-              {exp.achievements.map((a, i) => (
+              {finvu.achievements.map((a, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, padding: '8px 12px', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 6 }}>
                   <span style={{ color: 'var(--green)', flexShrink: 0 }}>→</span>
+                  <span style={{ fontSize: 13, color: 'var(--text2)', lineHeight: 1.6 }}>{a}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Previous Role — PEOL */}
+          <div className="card" style={{ padding: '24px 28px', marginBottom: 12 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16, marginBottom: 16 }}>
+              <div>
+                <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--muted2)', letterSpacing: 2, marginBottom: 8 }}>
+                  {peol.start.toUpperCase()} — {peol.end.toUpperCase()}
+                </div>
+                <h3 style={{ fontSize: 'clamp(18px, 2.5vw, 24px)', fontWeight: 700, color: 'var(--text)', marginBottom: 4 }}>{peol.role}</h3>
+                <p style={{ fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--muted)' }}>
+                  {peol.company} · {peol.location}
+                </p>
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, alignSelf: 'flex-start' }}>
+                {peol.technologies.slice(0, 6).map((t) => (
+                  <span key={t} className="skill-chip" style={{ fontSize: 11 }}>{t}</span>
+                ))}
+              </div>
+            </div>
+            <div style={{ height: 1, background: 'var(--border)', margin: '16px 0' }} />
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 8 }}>
+              {peol.achievements.map((a, i) => (
+                <div key={i} style={{ display: 'flex', gap: 10, padding: '8px 12px', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 6 }}>
+                  <span style={{ color: 'var(--muted2)', flexShrink: 0 }}>→</span>
                   <span style={{ fontSize: 13, color: 'var(--text2)', lineHeight: 1.6 }}>{a}</span>
                 </div>
               ))}

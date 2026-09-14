@@ -7,11 +7,12 @@ import { projects } from '../data/projects';
 
 const TIMELINE_EVENTS = [
   { year: '2019', label: 'Started CSE', detail: 'Visvesvaraya Technological University', type: 'education' },
+  { year: '2023', label: 'Joined PEOL Technologies', detail: 'Software Engineer · October 2023 · Bengaluru', type: 'work' },
   { year: '2023', label: 'Graduated B.E.', detail: '8.0 CGPA · No backlogs · Distinction', type: 'milestone' },
-  { year: '2023', label: 'Joined PEOL Technologies', detail: 'Software Engineer · Bengaluru', type: 'work' },
-  { year: '2024', label: 'Enterprise Applications', detail: '8+ production apps delivered', type: 'work' },
+  { year: '2024', label: 'Enterprise Applications', detail: '6+ production apps delivered', type: 'work' },
   { year: '2025', label: 'Started Scaler', detail: 'DSA, LLD, HLD, System Design, Kafka, AWS...', type: 'education' },
-  { year: '2026', label: 'Distributed Systems', detail: 'Microservices, AI Agents, Cloud', type: 'skill' },
+  { year: '2026', label: 'Joined Finvu', detail: 'Software Engineer · August 2026 · Pune, India · Fintech / AA', type: 'work' },
+  { year: '2026', label: 'Account Aggregator APIs', detail: 'Production-grade AA ecosystem, RBAC, WebSocket APIs', type: 'skill' },
 ];
 
 const TYPE_COLORS = {
