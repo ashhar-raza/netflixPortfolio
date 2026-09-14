@@ -1,33 +1,37 @@
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { personalInfo } from '../data/profile';
 
 const PROFILES = [
   {
     id: 'recruiter',
     name: 'Recruiter',
-    emoji: '🧑‍💼',
+    image: '/data/images/recruiter.png',
+    alt: 'Recruiter profile',
     color: '#2563eb',
     desc: 'Fast. Professional. Career-focused.',
   },
   {
     id: 'developer',
     name: 'Developer',
-    emoji: '💻',
+    image: '/data/images/developer.png',
+    alt: 'Developer profile',
     color: '#16a34a',
     desc: 'Architecture. Systems. Depth.',
   },
   {
     id: 'stalker',
     name: 'Stalker',
-    emoji: '🕵️',
+    image: '/data/images/stalker.png',
+    alt: 'Stalker profile',
     color: '#d97706',
     desc: 'Everything. Seriously, everything.',
   },
   {
     id: 'adventurer',
     name: 'Adventurer',
-    emoji: '🧭',
+    image: '/data/images/adventurer.png',
+    alt: 'Adventurer profile',
     color: '#7c3aed',
     desc: 'A cinematic career journey.',
   },
@@ -35,13 +39,7 @@ const PROFILES = [
 
 export default function ProfileSelection() {
   const navigate = useNavigate();
-  const [returning, setReturning] = useState(null);
   const [hovered, setHovered] = useState(null);
-
-  // useEffect(() => {
-  //   // const saved = localStorage.getItem('selectedProfile');
-  //   // if (saved) setReturning(saved);
-  // }, []);
 
   const handleSelect = (profileId) => {
     localStorage.setItem('selectedProfile', profileId);
@@ -60,44 +58,9 @@ export default function ProfileSelection() {
         {/* Logo */}
         <div style={{ marginBottom: 8 }} className="anim-fade-down">
           <span style={{ fontSize: 'clamp(32px, 6vw, 48px)', fontWeight: 900, color: 'var(--accent)' }}>
-            ASHHAR<span style={{ color: '#fff' }}></span>
+            ASHHAR
           </span>
         </div>
-
-        {/* Returning user banner */}
-        {returning && (
-          <div className="anim-fade-in" style={{
-            background: 'var(--card)', border: '1px solid var(--border)',
-            borderRadius: 8, padding: '14px 20px', marginBottom: 32,
-            display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12,
-            flexWrap: 'wrap',
-          }}>
-            <div>
-              <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--muted2)', letterSpacing: 2, marginBottom: 4 }}>
-                WELCOME BACK
-              </div>
-              <div style={{ fontSize: 14, color: 'var(--text2)' }}>
-                Continue as <span style={{ color: 'var(--text)', fontWeight: 700, textTransform: 'capitalize' }}>{returning}</span>?
-              </div>
-            </div>
-            <div style={{ display: 'flex', gap: 8 }}>
-              <button
-                className="btn btn-primary"
-                style={{ fontSize: 12, padding: '8px 16px' }}
-                onClick={() => handleSelect(returning)}
-              >
-                Continue
-              </button>
-              <button
-                className="btn btn-ghost"
-                style={{ fontSize: 12, padding: '8px 14px' }}
-                onClick={() => { setReturning(null); localStorage.removeItem('selectedProfile'); }}
-              >
-                Change
-              </button>
-            </div>
-          </div>
-        )}
 
         {/* Who's Watching */}
         <div style={{ marginBottom: 40 }} className="anim-fade-up">
@@ -134,9 +97,24 @@ export default function ProfileSelection() {
                     : 'var(--card)',
                   borderColor: hovered === p.id ? p.color : 'var(--border)',
                   transition: 'all 0.25s ease',
+                  overflow: 'hidden',
+                  padding: 0,
                 }}
               >
-                <span style={{ fontSize: 'clamp(36px, 6vw, 52px)' }}>{p.emoji}</span>
+                <img
+                  src={p.image}
+                  alt={p.alt}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block',
+                    borderRadius: 'inherit',
+                    transform: hovered === p.id ? 'scale(1.05)' : 'scale(1)',
+                    transition: 'transform 0.35s ease',
+                  }}
+                  draggable={false}
+                />
               </div>
               <div>
                 <div className="profile-card__name" style={{ fontSize: 15, fontWeight: 700 }}>{p.name}</div>
