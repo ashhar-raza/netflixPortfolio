@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import ARIntro from './components/ARIntro';
 import ProfileSelection from './pages/ProfileSelection';
 import Recruiter from './pages/Recruiter';
@@ -36,6 +37,7 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
+      <Analytics />
     </>
   );
 }

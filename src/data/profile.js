@@ -12,7 +12,7 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/ashhar-raza",
   github: "https://github.com/ashhar-raza",
   leetcode: "https://leetcode.com/u/raza_ashhar/",
-  resume: "/data/Ashhar-Raza-Resume.pdf",
+  resume: "/data/Ashhar Raza.pdf",
 };
 
 // ─── PROOF OF WORK STATS ──────────────────────────────────────────────────────

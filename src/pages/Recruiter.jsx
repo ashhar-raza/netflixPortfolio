@@ -54,7 +54,7 @@ export default function Recruiter() {
             <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               ▶ View Resume
             </a>
-            <a href={personalInfo.resume} download className="btn btn-secondary">
+            <a href={personalInfo.resume} download="Ashhar Raza.pdf" className="btn btn-secondary">
               ↓ Download
             </a>
             <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
