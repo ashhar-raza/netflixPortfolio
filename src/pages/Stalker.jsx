@@ -122,7 +122,7 @@ export default function Stalker() {
 
         {/* ── CERTIFICATIONS ── */}
         <section style={{ padding: '20px 0 40px' }}>
-          <CertificatesRow title="CERTIFICATIONS (all 6 of them)" />
+          <CertificatesRow title="CERTIFICATIONS (all 8 of them)" />
         </section>
 
         {/* ── PLACES TO FIND ME ── */}
